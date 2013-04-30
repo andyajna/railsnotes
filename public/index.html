@@ -181,21 +181,18 @@
           <h1>Rails Notes</h1>
           <h2>A noob&rsquo;s quick guide to rails commands from another noob</h2>
           <h2>by Andrew Kemp (Github = andyajna)</h2>
-
-            <h3>Browse these online guides</h3>
-            <li>
+            <h3>Browse these awesome online guides</h3>
             <ul class="links">
               <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
               <li><a href="http://http://ruby.railstutorial.org/">Ruby on Rails Tutorial by Michael Hartl</a></li>
               <li><a href="http://ruby.learncodethehardway.org/book/">Learn Ruby the Hard Way</a></li>
               <li><a href="http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/">Starting on Rails: What I Wish I Knew</a></li>
             </ul>
-            </li>
         </div>
 
 
         <div id="getting-started">
-          <h1>Getting started</h1>
+          <h1>Cheatsheet</h1>
 
           <ol>
             <li>
@@ -226,7 +223,7 @@
 
             <li>
               <h2>Deployment to Heroku</h2>
-              <p>If your app includes a database, you need to add this to your Gemfile so it can talk to Heroku's PostgreSQL:<br>
+              <p>If your app includes a database, you need to add this to your Gemfile so it can talk to Heroku's PostgreSQL:<br><br>
               <code>group :production do<br>
                 &nbsp;&nbsp;&nbsp;gem 'pg', '0.12.2'<br>
                 end</code></p>
@@ -275,9 +272,9 @@
                 <code>$ rails generate scaffold User name:string email:string</code></p>
               <p>Then update the local database:<br>
               <code>$ bundle exec rake db:migrate</code><br>
-              <span class="italics">using '<code>bundle exec</code>' ensures use of the rake specified in the Genfile</span></p>
+              <span class="italics">using '<code>bundle exec</code>' ensures use of the rake specified in the Gemfile</span></p>
               <p>Run the local server to test:<br>
-              <code>$ rails s</code> <span class="italics">and go to http://localhost:3000/ ion the browser</span></p>
+              <code>$ rails s</code> <span class="italics">and go to http://localhost:3000/ in the browser</span></p>
               <p>Do the commits and pushes:<br>
               <code>$ git add .</code><br>
               <code>$ git commit -m "note"</code><br>
