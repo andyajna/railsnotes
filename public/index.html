@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
+    <title>Railsnotes Reminders</title>
     <style type="text/css" media="screen">
       body {
         margin: 0;
@@ -171,19 +171,7 @@
         font-style: italic;
       }
     </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
+
   </head>
   <body>
     <div id="page">
@@ -203,14 +191,10 @@
 
       <div id="content">
         <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
+          <h1>Rails Notes</h1>
+          <h2>A noob&rsquo;s quick guide to rails commands from another noob</h2>
         </div>
 
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
 
         <div id="getting-started">
           <h1>Getting started</h1>
@@ -218,8 +202,9 @@
 
           <ol>
             <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
+              <h2>Setting up a new rails app</h2>
+              <p>Make a new app:<br>
+              $ rails new &lt;appname&gt;</p>
             </li>
 
             <li>
