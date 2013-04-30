@@ -40,7 +40,7 @@
         border: 3px solid #aaa;
         border-top: none;
         padding: 25px;
-        width: 500px;
+        width: 600px;
       }
 
       #sidebar {
@@ -175,30 +175,27 @@
   </head>
   <body>
     <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
+      
       <div id="content">
         <div id="header">
           <h1>Rails Notes</h1>
           <h2>A noob&rsquo;s quick guide to rails commands from another noob</h2>
+          <h2>by Andrew Kemp (Github = andyajna)</h2>
+          <p>&nbsp;</p>
+          <li>
+            <h3>Browse these online guides</h3>
+            <ul class="links">
+              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
+              <li><a href="http://http://ruby.railstutorial.org/">Ruby on Rails Tutorial by Michael Hartl</a></li>
+              <li><a href="http://ruby.learncodethehardway.org/book/">Learn Ruby the Hard Way</a></li>
+              <li><a href="http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/">Starting on Rails: What I Wish I Knew</a></li>
+            </ul>
+          </li>
         </div>
 
 
         <div id="getting-started">
           <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
 
           <ol>
             <li>
@@ -219,7 +216,7 @@
               <code>$ git add . </code><span class="italics">the . represents the entire directory</span></p>
               <p>Commit (finalise) the files in the staging area:<br>
               <code>$ git commit -m "add a note here to define the commit"</code></p>
-              <p><span class="italics">At this point set up the remote reop on github.com before the next step</span></p>
+              <p><span class="italics">At this point set up the remote repo on github.com before the next step</span></p>
               <p>Tell the local git about the remote git you just set up:<br>
               <code>$ git remote add origin git@github.com:&lt;username&gt;/&lt;appname&gt;.git</code></p>
               <p>Push the app from the local git to the remote git on github:<br>
@@ -287,7 +284,7 @@
               <code>$ git push</code></p>
               <p>Deploy to Heroku:<br>
               <code>$ heroku create --stack cedar</code><br>
-              <code>$ git push heroku master</code>
+              <code>$ git push heroku master</code><br>
               <code>$ heroku run rake db:migrate</code> <span class="italics"> this pushes the database structure to heroku</span></p>
             </li>
           </ol>
