@@ -1,12 +1,10 @@
-<% provide(:title, 'Setting Up a Project') %>
-<h1>Setting Up a Project</h1>
-<div id="page">
-      
-      <div id="content">
-        <div id="header">
+<% provide(:title, 'Quick Guide For Noobs') %>
+        <div class="hero-unit">
+          <div class="center">
           <h1>Rails Notes</h1>
           <h2>A noob&rsquo;s quick guide to rails commands from another noob</h2>
           <h2>by Andrew Kemp (Github = andyajna)</h2>
+          </div>
             <h3>Browse these awesome online guides</h3>
             <ul class="links">
               <li><a href="http://ruby.learncodethehardway.org/book/" target="new">Learn Ruby the Hard Way</a></li>
@@ -16,104 +14,3 @@
               <li><a href="http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/" target="new">Starting on Rails: What I Wish I Knew</a></li>
             </ul>
         </div>
-
-
-        <div id="getting-started">
-          <h1>Cheatsheet</h1>
-
-          <ol>
-            <li>
-              <h2>Setting up a new rails app</h2>
-              <p>Make a new app:<br>
-              <code>$ rails new &lt;appname&gt;</code></p>
-              <p>If you're editing the Gemfile for gem version control:<br>
-              <code>$ subl Gemfile</code> <span class="italics">then edit the Gemfile as instructed by tutorial and save</span><br>
-              <code>$ bundle update</code><br>
-              <code>$ bundle install</code></p>
-            </li>
-
-            <li>
-              <h2>Set up local and remote gits for the app</span></h2>
-              <p>Initialise the local git repo for the app:<br>
-              <code>$ git init</code></p>
-              <p>Add all app files to the git staging area:<br>
-              <code>$ git add . </code><span class="italics">the . represents the entire directory</span></p>
-              <p>Commit (finalise) the files in the staging area:<br>
-              <code>$ git commit -m "add a note here to define the commit"</code></p>
-              <p><span class="italics">At this point set up the remote repo on github.com before the next step</span></p>
-              <p>Tell the local git about the remote git you just set up:<br>
-              <code>$ git remote add origin git@github.com:&lt;username&gt;/&lt;appname&gt;.git</code></p>
-              <p>Push the app from the local git to the remote git on github:<br>
-              <code>$ git push -u origin master</code> <span class="italics">for the inital push</span><br>
-              <code>$ git push</code> <span class="italics">subsequent pushes after the inital push</span></p>
-            </li>
-
-            <li>
-              <h2>Deployment to Heroku</h2>
-              <p>If your app includes a database, you need to add this to your Gemfile so it can talk to Heroku's PostgreSQL:<br><br>
-              <code>group :production do<br>
-                &nbsp;&nbsp;&nbsp;gem 'pg', '0.12.2'<br>
-                end</code></p>
-              <p>After you have modified the Gemfile, you need to update the bundle, but without installing this production gem locally:<br>
-              <code>$ bundle install --without production</code></p>
-              <p>Login to Heroku:<br>
-              <code>$ heroku login</code></p>
-              <p>Nav back to the app directory if not already there.<br>
-              Create a heroku subdomain for your app:<br>
-              <code>$ heroku create</code></p>
-              <p>Use git to push your app to the subdomain you just created on Heroku:<br>
-              <code>$ git push heroku master</code></p>
-              <p>Rename the Heroku subdomain to the same as your appname:<br>
-              <code>$ heroku rename &lt;newname&gt;</code></p>
-            </li>
-
-            <li>
-              <h2>Making a branch to modify then merge</h2>
-              <p>Create a branch:<br>
-              <code>$ git checkout -b &lt;branchname&gt;</code> <span class="italics">make branchname descriptive but brief</span></p>
-              <p>List the local branches just to check:<br>
-              <code>$ git branch</code></p>
-              <p>Open the file you want to edit:<br>
-              <code>$ subl &lt;filename&gt;.&lt;extension&gt;</code> <span class="italics">make changes then save</span></p>
-              <p>Inspect changes:<br>
-              <code>$ git status</code></p>
-              <p>To discard changes:<br>
-              <code>$ git checkout &lt;filename&gt;.&lt;extension&gt;</code></p>
-              <p>To commit changes:<br>
-              <code>$ git commit -a -m "add a note here to define the commit"</code></p>
-              <p>Merge the changes back into the master branch, first checkout the master:<br>
-              <code>$ git checkout master</code></p>
-              <p>Now merge the branch back in:<br>
-              <code>$ git merge &lt;branchname&gt;</code></p>
-              <p>Now delete the branch that is no longer needed:<br>
-              <code>$ git branch -d &lt;branchname&gt;</code></p>
-              <p>Push changes to remote git, Github:<br>
-              <code>$ git push</code></p>
-            </li>
-
-            <li>
-              <h2>Scaffolds</h2>
-              <p>Pass the <code>scaffold</code> command to the <code>rails generate</code> script:<br>
-              <code>$ rails generate scaffold XXX attribute1name:attribute1type attribute2name:attribute2type</code></p>
-              <p>where XXX is the singular version of the resource name, eg:<br>
-                <code>$ rails generate scaffold User name:string email:string</code></p>
-              <p>Then update the local database:<br>
-              <code>$ bundle exec rake db:migrate</code><br>
-              <span class="italics">using '<code>bundle exec</code>' ensures use of the rake specified in the Gemfile</span></p>
-              <p>Run the local server to test:<br>
-              <code>$ rails s</code> <span class="italics">and go to http://localhost:3000/ in the browser</span></p>
-              <p>Do the commits and pushes:<br>
-              <code>$ git add .</code><br>
-              <code>$ git commit -m "note"</code><br>
-              <code>$ git push</code></p>
-              <p>Deploy to Heroku:<br>
-              <code>$ heroku create --stack cedar</code><br>
-              <code>$ git push heroku master</code><br>
-              <code>$ heroku run rake db:migrate</code> <span class="italics"> this pushes the database structure to heroku</span></p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div id="footer">&nbsp;</div>
-    </div>
